@@ -1,0 +1,143 @@
+#canvasContainer
+{
+    width: 100%;
+    height: 99%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+#canvasMenu
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    border-bottom: 2px solid black;
+}
+
+#canvasMenu li
+{
+    list-style-type: none;
+}
+
+#drawPencil,
+#drawPencilTool,
+#eraserPencil,
+#eraserPencilTool
+{
+    float: left;
+    height: 100%;
+    margin-left: 1%;
+}
+
+#drawPencil,
+#eraserPencil
+{
+    position: relative;
+    display: inline;
+    width: 10%;
+}
+
+#canvasMenu input[type=radio]
+{
+    display: none;
+}
+
+#canvasMenu label
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#drawPencil label,
+#eraserPencil label
+{
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#drawPencilOptionLabel
+{
+    background-image: url(../img/sketch/pencil.png);
+}
+
+input[type=radio]:checked + #drawPencilOptionLabel
+{
+    background-image: url(../img/sketch/pencil_white.png);
+    background-color: #304474;
+}
+
+#eraserPencilOptionLabel
+{
+    background-image: url(../img/sketch/eraser.png);
+}
+
+input[type=radio]:checked + #eraserPencilOptionLabel
+{
+    background-image: url(../img/sketch/eraser_white.png);
+    background-color: #304474;
+}
+
+/*#drawPencilTool*/
+#eraserPencilTool
+{
+    display: none;
+}
+
+#drawPencilTool,
+#eraserPencilTool
+{
+    width: 76%;
+}
+
+#drawPencilColorPicker
+{
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+#drawPencilColorPicker li
+{
+    position: relative;
+    display: inline;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 4px 0 0 5px;
+}
+
+#drawPencilBlack + label { background-color: black; }
+#drawPencilRed + label { background-color: red; }
+#drawPencilBlue + label { background-color: blue; }
+#drawPencilGreen + label { background-color: green; }
+#drawPencilOrange + label { background-color: orange; }
+
+#drawPencilColorPicker input[type=radio]:checked + label
+{
+    width: 30px;
+    height: 30px;
+    border: 5px solid #00E6E6;
+}
+
+#eraserPencilTool input[type=range],
+#eraserPencilTool span
+{
+    height: 100%;
+    float: left;
+}
+
+#eraserPencilTool input[type=range]
+{
+    width: 76%;
+    margin: 0 2%;
+}
+
+#eraserPencilTool span
+{
+    width: 20%;
+    line-height: 48px;
+    font-size: 2em;
+    text-align: center;
+}

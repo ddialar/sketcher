@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/sketcher.css" />
+        <title>Sketcher</title>
+    </head>
+    <body ontouchstart="">
+        <div id="canvasContainer">
+            <ul id="canvasMenu">
+                <li id="drawPencil">
+                    <input id="drawPencilOption" type="radio" name="canvasMenu" checked="checked">
+                    <label id="drawPencilOptionLabel" for="drawPencilOption"></label>
+                </li>
+                <li id="eraserPencil">
+                    <input id="eraserPencilOption" type="radio" name="canvasMenu">
+                    <label id="eraserPencilOptionLabel" for="eraserPencilOption"></label>
+                </li>
+                <li id="drawPencilTool">
+                    <ul id="drawPencilColorPicker">
+                        <li>
+                            <input id="drawPencilBlack" type="radio" name="pencilColor" checked="checked" data-color='black'>
+                            <label for="drawPencilBlack"></label>
+                        </li>
+                        <li>
+                            <input id="drawPencilRed" type="radio" name="pencilColor" data-color='red'>
+                            <label for="drawPencilRed"></label>
+                        </li>
+                        <li>
+                            <input id="drawPencilBlue" type="radio" name="pencilColor" data-color='blue'>
+                            <label for="drawPencilBlue"></label>
+                        </li>
+                        <li>
+                            <input id="drawPencilGreen" type="radio" name="pencilColor" data-color='green'>
+                            <label for="drawPencilGreen"></label>
+                        </li>
+                        <li>
+                            <input id="drawPencilOrange" type="radio" name="pencilColor" data-color='orange'>
+                            <label for="drawPencilOrange"></label>
+                        </li>
+                    </ul>
+                </li>
+                <li id="eraserPencilTool">
+                    <input type="range" min="5" max="200" step="1" value="10">
+                    <span>10</span>
+                </li>
+            </ul>
+            <canvas id="canvasArea">
+                Your browser doesn't support HTML5 Canvas.
+            </canvas>
+        </div>   
+        
+        <script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/sketcher.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('deviceready', initialize(), false);
+                
+            function initialize()
+            {
+                configureCanvas();
+                configureEvents();
+                // These functions are defined into the sketcher.js file.
+            }
+        </script>
+    </body>
+</html>
